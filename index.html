@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Happy Anniversary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <header class="hero" aria-label="Anniversary hero">
+      <div class="hero-media" aria-hidden="true">
+        
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <nav class="nav">
+            <div class="nav-brand">🎉 Anniversary</div>
+          <div class="nav-actions">
+            <button id="confettiBtn" class="btn">Confetti</button>
+            <button id="musicBtn" class="btn">Music</button>
+            <button id="fireworksBtn" class="btn">Fireworks</button>
+          </div>
+        </nav>
+
+        <div class="hero-title">
+          <h1 id="title">Happy Anniversary</h1>
+          <span class="hero-hearts" aria-hidden="true">❤️ 🌿</span>
+          <p id="subtitle">Celebrating the moments that matter — explore the 12-month timeline below.</p>
+        </div>
+
+        <div class="hero-bottom">
+          <div class="countdown">
+            <label for="dateInput">Anniversary date</label>
+            <input id="dateInput" type="date">
+            <div id="countdownDisplay" class="countdownDisplay">—</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="timeline">
+      <h2>Timeline: Months 1 → 12</h2>
+      <div class="timeline-controls">
+        <button class="btn" id="prevMonth" aria-label="Previous month">◀</button>
+        <div class="slider-wrap">
+          <input id="monthRange" type="range" min="1" max="12" value="1">
+          <div class="slider-bubble" id="sliderBubble">1</div>
+          <div class="month-markers" id="monthMarkers">
+            <!-- 12 clickable month dots -->
+            <button class="month-dot" data-month="1" aria-label="Month 1"></button>
+            <button class="month-dot" data-month="2" aria-label="Month 2"></button>
+            <button class="month-dot" data-month="3" aria-label="Month 3"></button>
+            <button class="month-dot" data-month="4" aria-label="Month 4"></button>
+            <button class="month-dot" data-month="5" aria-label="Month 5"></button>
+            <button class="month-dot" data-month="6" aria-label="Month 6"></button>
+            <button class="month-dot" data-month="7" aria-label="Month 7"></button>
+            <button class="month-dot" data-month="8" aria-label="Month 8"></button>
+            <button class="month-dot" data-month="9" aria-label="Month 9"></button>
+            <button class="month-dot" data-month="10" aria-label="Month 10"></button>
+            <button class="month-dot" data-month="11" aria-label="Month 11"></button>
+            <button class="month-dot" data-month="12" aria-label="Month 12"></button>
+          </div>
+        </div>
+        <button class="btn" id="nextMonth" aria-label="Next month">▶</button>
+        <div class="month-label">Month <span id="monthLabel">1</span></div>
+        <button class="btn" id="editLabelsBtn" title="Edit month labels">Labels</button>
+        <button class="btn" id="exportTimelineBtn" title="Export timeline">Export</button>
+      </div>
+
+      <!-- Messages are read-only: selecting a month shows a full-screen announcement -->
+      <div id="monthMessageDisplay" class="month-message">No message yet for this month.</div>
+
+      <!-- Fullscreen announcement modal -->
+      <div id="announcement" class="announcement hidden" aria-hidden="true">
+        <div class="announce-card">
+          <button id="closeAnnounce" class="announce-close" aria-label="Close">×</button>
+          <h3 id="announceTitle">Month 1</h3>
+          <div id="announceText" class="announce-text">No message yet for this month.</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">Made with ♥ — tweak styles in <code>styles.css</code></footer>
+  </main>
+
+  <canvas id="fxCanvas" class="fx"></canvas>
+  <audio id="bgAudio" src="Childish GambinoMe and Your Mama Official Audio.mp3" preload="auto" loop></audio>
+  <script src="script.js"></script>
+</body>
+</html>
